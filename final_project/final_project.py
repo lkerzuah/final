@@ -7,7 +7,22 @@ import streamlit.components.v1 as components
 import warnings
 warnings.filterwarnings("ignore")
 
-st.set_page_config(page_title="superstore", page_icon=":Bar_chart:", layout="wide")
+st.set_page_config(page_title="superstore",
+                   page_icon="⚡", layout="wide")
+
+# Load the available data and overview
+path = os.path.dirname(__file__)
+path = os.path.join(path, "superstore.csv")
+
+@st.cache_data
+def load_data(data_path):
+    dataframe = pd.read_csv(data_path, encoding="ISO-8859-1", low_memory=False)
+    var = dataframe["Region"]
+    var = dataframe["State"]
+    var = dataframe["City"]
+
+    return dataframe
+
 
 st.title(":bar_chart: My superstore EDA Application")
 st.markdown("<style>div.block-container{padding-top:1rem;</style>", unsafe_allow_html=True)
