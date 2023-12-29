@@ -9,9 +9,9 @@ app_folder = os.path.join(script_path, 'streamlit_app')
 sys.path.append(app_folder)
 
 # import and run the Streamlit app from app.py that lives in streamlit_app folder
-import app
+import final_project
 
 if __name__ == '__main__':
-    app.run()  # run the Streamlit app
+    final_project.run()  # run the Streamlit app
 
 # you can call it run or main or whatever in the app.py script, just make sure to call the right funciton from there to here
