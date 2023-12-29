@@ -2,7 +2,7 @@ import streamlit as st
 import plotly.express as px
 import numpy
 import pandas as pd
-import os
+from os.path import os
 import warnings
 warnings.filterwarnings("ignore")
 
