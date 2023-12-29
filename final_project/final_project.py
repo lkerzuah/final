@@ -3,6 +3,7 @@ import plotly.express as px
 import numpy
 import pandas as pd
 from os.path import os
+import streamlit.components.v1 as components
 import warnings
 warnings.filterwarnings("ignore")
 
