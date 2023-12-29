@@ -15,16 +15,6 @@ st.set_page_config(page_title="superstore",
 path = os.path.dirname(__file__)
 path = os.path.join(path, "superstore.csv")
 
-@st.cache_data
-def load_data(data_path):
-    dataframe = pd.read_csv(data_path, encoding="ISO-8859-1", low_memory=False)
-    var = dataframe["Region"]
-    var = dataframe["State"]
-    var = dataframe["City"]
-
-    return dataframe
-
-
 st.title(":bar_chart: My superstore EDA Application")
 st.markdown("<style>div.block-container{padding-top:1rem;</style>", unsafe_allow_html=True)
 
@@ -34,7 +24,7 @@ if f1 is not None:
     st.write(filename, encoding="ISO-8859-1")
     df = pd.read_csv(filename)
 else:
-    os.chdir(r"C:\Users\varte\OneDrive\Desktop\Data Science Course\Final\final_project")
+
     df = pd.read_csv("superstore.csv", encoding="ISO-8859-1")
 col1, col2, = st.columns(2)
 df["Order Date"] = pd.to_datetime(df["Order Date"])
