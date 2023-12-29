@@ -1,7 +1,6 @@
 import streamlit as st
 import plotly.express as px
 import numpy
-import pandas_bokeh
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
