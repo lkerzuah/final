@@ -21,11 +21,11 @@ st.markdown("<style>div.block-container{padding-top:1rem;</style>", unsafe_allow
 f1 = st.file_uploader(":file_folder: upload a file", type=(["csv", "txt", "xlsx", "xls"]))
 if f1 is not None:
     filename = f1.name
-    st.write(filename, encoding="ISO-8859-1")
+    st.write(filename)
     df = pd.read_csv(filename)
 else:
 
-    df = pd.read_csv("superstore.csv", encoding="ISO-8859-1")
+    df = pd.read_csv("superstore.csv")
 col1, col2, = st.columns(2)
 df["Order Date"] = pd.to_datetime(df["Order Date"])
 
