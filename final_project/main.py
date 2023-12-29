@@ -5,7 +5,7 @@ import sys
 script_path = os.path.dirname(os.path.abspath(__file__))
 
 # add 'streamlit_app' folder to sys.path
-app_folder = os.path.join(script_path, 'streamlit_app')
+final_project_folder = os.path.join(script_path, 'streamlit_app')
 sys.path.append(app_folder)
 
 # import and run the Streamlit app from app.py that lives in streamlit_app folder
