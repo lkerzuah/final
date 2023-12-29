@@ -26,7 +26,8 @@ f1 = st.file_uploader(":file_folder: upload a file", type=(["csv", "txt", "xlsx"
 if f1 is not None:
     filename = f1.name
     st.write(filename)
-    df = pd.read_csv(superstore)
+    df = load_data(path)
+
 else:
     df = pd.read_csv("superstore.csv")
 col1, col2, = st.columns(2)
