@@ -1,6 +1,9 @@
 import streamlit as st
 import plotly.express as px
 import numpy
+import pandas_bokeh
+import seaborn as sns
+import matplotlib.pyplot as plt
 import pandas as pd
 import os
 import sys
@@ -15,6 +18,10 @@ st.set_page_config(page_title="superstore",
 path = os.path.dirname(__file__)
 path = os.path.join(path, "superstore.csv")
 
+@st.cache_data
+def load_data(data_path):
+    dataframe = pd.read_csv(data_path, encoding="ISO-8859-1", low_memory=False)
+
 st.title(":bar_chart: My superstore EDA Application")
 st.markdown("<style>div.block-container{padding-top:1rem;</style>", unsafe_allow_html=True)
 
@@ -24,7 +31,6 @@ if f1 is not None:
     st.write(filename)
     df = pd.read_csv(filename)
 else:
-
     df = pd.read_csv("superstore.csv")
 col1, col2, = st.columns(2)
 df["Order Date"] = pd.to_datetime(df["Order Date"])
